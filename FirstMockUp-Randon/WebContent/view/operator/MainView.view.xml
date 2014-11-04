@@ -1,0 +1,55 @@
+<core:View controllerName="com.sap.randon.view.operator.MainView"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:commons="sap.suite.ui.commons"
+	xmlns:layout="sap.ui.layout">
+	<Page title="{i18n>TestTitle}" id="mainPage" enableScrolling="false">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Text class="sap-font-open-sans" text="Portal do Campo de Provas Randon" />
+				</contentLeft>
+				<contentMiddle>
+					<Text class="sap-font-open-sans" text="Operator" />
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://action-settings" press="handleOptionsPress"
+						id="optionsButton" class="sap-options-button" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+
+			<TileContainer id="container">
+
+				<StandardTile id="userTile" class="sap-tile-border-radius"
+					icon="sap-icon://customer" title="{/UserTitle}" removable="false" />
+
+				<StandardTile id="testsScheduleTile" class="sap-tile-border-radius"
+					icon="sap-icon://gantt-bars" title="{i18n>TestsScheduleTitle}"
+					number="{/TestsScheduleNumber}" numberUnit="{i18n>TestsUnit}"
+					removable="false" />
+
+				<StandardTile id="runningTestsTile" class="sap-tile-border-radius"
+					icon="sap-icon://goalseek" title="{i18n>RunningTestsTitle}"
+					number="{
+						path : '/runningTests',
+						formatter : 'com.sap.randon.util.Formatter.getLength'
+						}" numberUnit="{i18n>TestsUnit}"
+					removable="false" 
+					press="runningTestsPress"/>
+
+				<StandardTile id="finishedTestsTile" class="sap-tile-border-radius"
+					icon="sap-icon://goal" title="{i18n>FinishedTestsTitle}"
+					numberUnit="{i18n>TestsUnit}"
+					removable="false" />
+
+				<StandardTile id="myHoursTile" class="sap-tile-border-radius"
+					icon="sap-icon://history" title="{i18n>MyHoursTitle}"
+					removable="false" />
+
+
+
+			</TileContainer>
+		</content>
+
+	</Page>
+</core:View>

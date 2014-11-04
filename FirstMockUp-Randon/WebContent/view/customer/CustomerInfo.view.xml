@@ -1,0 +1,49 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:commons="sap.ui.commons" controllerName="com.sap.randon.view.customer.CustomerInfo"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Dados da Empresa"  showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<f:SimpleForm id="requestorDataForm" editable="true"
+						layout="ResponsiveGridLayout" title="Formulário de Identificação"
+						labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+						columnsL="2" columnsM="2" columnsS="1" class="editableForm">
+						<core:Title />
+						<Label text="Empresa/Cliente" />
+						<Input enabled="false" type="Text" id="clientName" value="{/UserTitle}" />
+						<Label text="Setor" />
+						<Input enabled="false" type="Text" id="sector" value="Setor Automobilístico" />
+						<Label text="CNPJ" />
+						<Input enabled="false" type="Text" id="cnpj" value="59.104.901/0001-76"/>
+						<Label text="Categoria" />
+						<Input enabled="false" type="Text" id="category" value="2 - Veículos Pesados"/>
+
+						<core:Title />
+						<Label text="Endereço" />
+						<Input enabled="false" type="Text" id="address" value="Av. José Odorizzi, 151, Bairro Vila Euro"/>
+						<Label text="Cidade" />
+						<Input enabled="false" type="Text" id="city" value="São Bernardo dos Campos"/>
+						<Label text="CEP" />
+						<Input enabled="false" type="Text" id="cep" value="91212-004"/>
+						<Label text="Telefone" />
+						<Input enabled="false" type="Text" id="phone" value="(11) 4344-9344"/>
+						<Label/>
+			          	<Button id="editButton" text="Editar" press="editFields" class="sapMBtnFloatRight" visible="false"/>
+			          	<!-- make visible true to give editing powers -->
+						<Button id="submitButton" text="Submeter" press="submitFields" visible="false" />
+
+						<core:Title />
+						<core:Title />
+						<Label />
+						<!-- <Button class="sapMBtnFloatRight" width="2rem" type="Transparent" 
+							icon="sap-icon://arrow-right" press="nextStep" id="next1"> <customData> <core:CustomData 
+							key="nextTabNumber" value="2" /> </customData> </Button> -->
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

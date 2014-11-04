@@ -1,0 +1,27 @@
+
+* {
+	font-family : 'Open Sans', sans-serif;
+}
+
+.sapMText, *.sapMLabel {
+	font-family : 'Open Sans', sans-serif;
+}
+
+.sapMShellLogo .sapMShellLogoImg {
+	height : 1.75rem;
+	width : auto;
+}
+
+.sapMTile.sapMWideTile {
+	width : 25.25rem;
+}
+.sapMTile.sapMWideTile .sapMTileContent {
+	width : 25.2rem;
+	background-color : yellow;
+}
+
+
+
+/* .sap-font-open-sans, .sap-font-open-sans * { */
+	 /* font-family : 'Open Sans', sans-serif; */
+

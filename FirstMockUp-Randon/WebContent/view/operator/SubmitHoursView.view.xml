@@ -1,0 +1,122 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:ca="sap.ca.ui"
+	controllerName="com.sap.randon.view.operator.SubmitHoursView"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title" showNavButton="true" navButtonPress="handleNavButtonPress">
+		<content>
+			<Panel headerText="{companyName}">
+				<content>
+					<HBox>
+						<VBox>
+							<HBox>
+								<Label text="Tipo de Teste:" />
+								<HBox width="1rem" />
+								<Label text="{testData/type}" />
+							</HBox>
+							<HBox>
+								<Label text="Período:" />
+								<HBox width="1rem" />
+								<Label text="{status}" />
+							</HBox>
+						</VBox>
+						<HBox />
+					</HBox>
+				</content>
+			</Panel>
+			<Panel>
+				<HBox alignItems="Center" width="67%">
+					<HBox width="1rem" />
+					<HBox alignItems="Center">
+						<Label text="Data:" />
+						<HBox width="1rem" />
+						<ca:DatePicker />
+					</HBox>
+					<HBox width="1rem" />
+					<HBox alignItems="Center">
+						<Label text="Etapa:" />
+						<HBox width="1rem" />
+						<Select>
+							<items>
+								<core:ListItem text="Selecione a Etapa" />
+							</items>
+						</Select>
+					</HBox>
+				</HBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout"
+					labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+					columnsL="4" columnsM="4" columnsS="4" class="editableForm">
+					<core:Title />
+					<Label text="Turno" />
+					<Input type="Text" enabled="false" value="Manhã" />
+					<Label />
+					<Input type="Text" enabled="false" value="Tarde" />
+					<Label />
+					<Input type="Text" enabled="false" value="Noite" />
+					<core:Title />
+					<Label text="Início" />
+					<DateTimeInput type="Time" id="startTimeMorning" />
+					<Label text="Início" />
+					<DateTimeInput type="Time" id="startTimeAfternoon" />
+					<Label text="Início" />
+					<DateTimeInput type="Time" id="startTimeEvening" />
+					<core:Title />
+					<Label text="Fim" />
+					<DateTimeInput type="Time" id="endTimeMorning" />
+					<Label text="Fim" />
+					<DateTimeInput type="Time" id="endTimeAfternoon" />
+					<Label text="Fim" />
+					<DateTimeInput type="Time" id="endTimeEvening" />
+					<core:Title />
+					<Label text="Total" />
+					<DateTimeInput enabled="false" type="Time"
+						id="totalTimeMorning" />
+					<Label text="Total" />
+					<DateTimeInput enabled="false" type="Time"
+						id="totalTimeAfternoon" />
+					<Label text="Total" />
+					<DateTimeInput enabled="false" type="Time"
+						id="totalTimeEvening" />
+				</f:SimpleForm>
+				<HBox justifyContent="Center" width="100%">
+					<HBox justifyContent="SpaceBetween" width="75%">
+						<Panel headerText="Pistas">
+							<List items="{/tracks}">
+								<CustomListItem>
+									<content>
+										<RadioButton text="{name}" groupName="TracksRBGroup" />
+									</content>
+								</CustomListItem>
+							</List>
+						</Panel>
+						<Panel headerText="Pessoas">
+							<List items="{/people}">
+								<CustomListItem>
+									<content>
+										<RadioButton text="{name}" groupName="PeopleRBGroup" />
+									</content>
+								</CustomListItem>
+							</List>
+						</Panel>
+						<Panel headerText="Equipamentos">
+							<List items="{/equipments}">
+								<CustomListItem>
+									<content>
+										<RadioButton text="{name}" groupName="EquipRBGroup" />
+									</content>
+								</CustomListItem>
+							</List>
+						</Panel>
+					</HBox>
+				</HBox>
+			</Panel>
+		</content>
+		<footer>
+		    <Bar>
+		        <contentRight>
+		            <Button text="Salvar" />
+		            <Button text="Cancelar" />
+		        </contentRight>
+		    </Bar>
+		</footer>
+	</Page>
+</core:View>

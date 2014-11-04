@@ -1,0 +1,50 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="com.sap.randon.view.adm.RunningTestsView"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Shell logo="{i18n>SapLogoPath}" title="{i18n>RunningTestsTitle}">
+		<app>
+			<SplitApp id="runningTestsApp" showNavButton="true">
+				<masterPages>
+
+					<Page id="runningTestsPage"
+						title="{i18n>RunningTestsTitle}">
+						<customHeader>
+						    <Bar>
+						        <contentLeft>
+						            <Button press="handleNavButtonPress" icon="sap-icon://home" />
+						        </contentLeft>
+						        <contentMiddle>
+						            <Text class="sap-font-open-sans" text="{i18n>RunningTestsTitle}" />
+						        </contentMiddle>
+						    </Bar>
+						</customHeader>
+						<List id="runningTestsList" selectionChange="selectedRunningTestList"
+						    mode="{device>/listMode}"
+							items="{
+							 path : '/runningTests' ,
+							 mode : 'sap.ui.model.BindingMode.TwoWay' }" noDataText="Não há testes em andamento." 
+							>
+							<headerToolbar>
+							    <Toolbar design="Transparent" width="100%">
+							        <content>
+							            <SearchField
+							                search="handleSearch"
+							                width="100%" >
+							                
+							            </SearchField>
+							        </content>
+							    </Toolbar>
+							</headerToolbar>
+							<ObjectListItem id="templateTestList" press="selectedRunningTestItem" type="{device>/listItemType}" title="{companyName}" number="{id}">
+								<attributes>
+									<ObjectAttribute text="Data de Criação: {creationDate}" />
+									<ObjectAttribute text="{status}" />
+								</attributes>
+							</ObjectListItem>
+						</List>
+					</Page>
+				</masterPages>
+			</SplitApp>
+		</app>
+	</Shell>
+</core:View>

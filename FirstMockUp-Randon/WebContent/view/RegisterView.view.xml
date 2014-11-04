@@ -1,0 +1,58 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.sap.randon.view.RegisterView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Cadastro" showNavButton="true" navButtonPress="handleNavButtonPress"
+		enableScrolling="true">
+		<content>
+			<VBox height="3rem" />
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<f:SimpleForm id="registerForm" editable="true"
+						layout="ResponsiveGridLayout" title="Formulário de Cadastro"
+						labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+						columnsL="2" columnsM="2" columnsS="1" class="editableForm">
+						<core:Title />
+						<Label text="Empresa/Cliente" />
+						<Input type="Text" id="companyName" valueStateText="O nome da empresa não pode ser vazio"
+							value="{
+						    	path : 'companyName',
+						    	type : 'sap.ui.model.type.String',
+						    	constraints : {
+						    		minLength: 1
+					    		}
+				    		}" />
+						<Label text="Setor" />
+						<Input type="Text" id="sector" valueStateText="O nome do setor deve ser informado"
+						    value="{ path : 'sector', type : 'sap.ui.model.type.String', constraints : {minLength : 1} }" />
+						<Label text="CNPJ" />
+						<Input type="Text" id="cnpj"
+							valueStateText="Campo obrigatório. Informe somente números." 
+							value="{ path : 'cnpj', type : '.onlyNumbers' }"/>
+						<Label text="Categoria" />
+						<Input type="Text" id="category" valueStateText="Campo obrigatório." 
+						    value="{ path : 'category', type : 'sap.ui.model.type.String', constraints : {minLength : 1} }"/>
+
+						<core:Title />
+
+						<Label text="Endereço" />
+						<Input id="address" valueStateText="Campo obrigatório" 
+						    value="{ path : 'address', type : 'sap.ui.model.type.String', constraints : {minLength : 1} }"/>
+						<Label text="Cidade" />
+						<Input id="city" valueStateText="Campo obrigatório. Não use símbolos ou números" 
+						    value="{ path : 'city', type : 'sap.ui.model.type.String', constraints : {minLength : 1} }"/>
+						<Label text="CEP" />
+						<Input id="cep" valueStateText="Use somente números" 
+						    value="{ path : 'cnpj', type : '.onlyNumbers' }"/>
+						<Label text="Telefone" />
+						<Input id="telephone" valueStateText="Use somente números" 
+						    value="{ path : 'cnpj', type : '.onlyNumbers' }"/>
+						<Label />
+						<Button class="sapMBtnFloatRight" text="Submeter" width="75%"
+							id="submitRegistration" press="validateAndSubmit" />
+
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

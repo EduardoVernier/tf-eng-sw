@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" id="mainPopover"
+	xmlns:core="sap.ui.core">
+	<ActionSheet placement="Bottom" 
+		contentWidth="10rem" enableScrolling="false" beforeOpen="forceButtonActive"
+		afterClose="forceButtonInactive">
+		<buttons>
+			<Button text="Reordenar" icon="sap-icon://edit" width="100%"
+				press="handleRearrangePress" id="rearrangeButton" />
+			<Button text="Sair" icon="sap-icon://log" width="100%"
+				press="handleLogoutPress" id="logoutButton" />
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

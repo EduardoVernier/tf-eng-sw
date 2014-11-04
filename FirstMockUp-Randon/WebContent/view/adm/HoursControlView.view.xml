@@ -1,0 +1,195 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:ca="sap.ca.ui"
+	controllerName="com.sap.randon.view.adm.HoursControlView" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Controle de Horas" navButtonPress="handleNavButtonPress"
+		showNavButton="true">
+		<content>
+			<Panel>
+				<FlexBox justifyContent="SpaceBetween" alignItems="Center">
+					<items>
+						<HBox width="0.1rem"></HBox>
+						<Label text="Recurso:" class="labelAdjustments">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+						</Label>
+						<Select width="100%">
+							<layoutData>
+								<FlexItemData growFactor="3" />
+							</layoutData>
+						</Select>
+
+
+						<Label text="Teste:" class="labelAdjustments">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+						</Label>
+						<Select width="100%">
+							<layoutData>
+								<FlexItemData growFactor="3" />
+							</layoutData>
+						</Select>
+
+						<Label text="Empresa:" class="labelAdjustments">
+							<layoutData>
+								<FlexItemData growFactor="1" />
+							</layoutData>
+						</Label>
+						<Select width="100%">
+							<layoutData>
+								<FlexItemData growFactor="3" />
+							</layoutData>
+						</Select>
+
+					</items>
+				</FlexBox>
+
+				<FlexBox id="testDateBox" alignItems="Center" direction="Row"
+					justifyContent="SpaceBetween" width="40%">
+					<HBox width="6.4rem">
+					</HBox>
+					<Label text="Período:" />
+					<HBox width="1.6rem">
+					</HBox>
+					<ca:DatePicker id="startDate" class="datePicker"
+						locale="pt_BR" />
+					<HBox width="1rem">
+					</HBox>
+					<Text class="sapMLabel" text="a" />
+					<HBox width="1rem">
+					</HBox>
+					<ca:DatePicker id="endDate" class="datePicker"
+						locale="pt_BR" />
+				</FlexBox>
+			</Panel>
+
+			<FlexBox height="5rem">
+			</FlexBox>
+
+
+			<Table>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="19/03/2014" />
+						<Text text="Tarde" />
+						<Text text="03:30" />
+						<Text text="Frenagem" />
+						<Text text="Execução" />
+						<Text text="Scania" />
+						<Text text="Pedro Pedroso" />
+					</cells>
+				</ColumnListItem>
+
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="19/03/2014" />
+						<Text text="Manhã" />
+						<Text text="05:30" />
+						<Text text="Tração" />
+						<Text text="Execução" />
+						<Text text="GM" />
+						<Text text="Pedro Pedroca" />
+					</cells>
+				</ColumnListItem>
+
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="18/03/2014" />
+						<Text text="Tarde" />
+						<Text text="4:00" />
+						<Text text="Frenagem" />
+						<Text text="Finalização" />
+						<Text text="VW" />
+						<Text text="Marcelo Pedroso" />
+					</cells>
+				</ColumnListItem>
+
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="18/03/2014" />
+						<Text text="Tarde" />
+						<Text text="4:00" />
+						<Text text="Frenagem" />
+						<Text text="Finalização" />
+						<Text text="VW" />
+						<Text text="Marcelo Pedroso" />
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="18/03/2014" />
+						<Text text="Tarde" />
+						<Text text="4:00" />
+						<Text text="Frenagem" />
+						<Text text="Finalização" />
+						<Text text="VW" />
+						<Text text="Marcelo Pedroso" />
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="18/03/2014" />
+						<Text text="Tarde" />
+						<Text text="4:00" />
+						<Text text="Frenagem" />
+						<Text text="Finalização" />
+						<Text text="VW" />
+						<Text text="Marcelo Pedroso" />
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="18/03/2014" />
+						<Text text="Tarde" />
+						<Text text="4:00" />
+						<Text text="Frenagem" />
+						<Text text="Finalização" />
+						<Text text="VW" />
+						<Text text="Marcelo Pedroso" />
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="18/03/2014" />
+						<Text text="Tarde" />
+						<Text text="4:00" />
+						<Text text="Frenagem" />
+						<Text text="Finalização" />
+						<Text text="VW" />
+						<Text text="Marcelo Pedroso" />
+					</cells>
+				</ColumnListItem>
+
+
+
+
+				<columns>
+					<Column>
+						<Label text="Data" />
+					</Column>
+					<Column>
+						<Label text="Turno" />
+					</Column>
+					<Column>
+						<Label text="Total" />
+					</Column>
+					<Column>
+						<Label text="Teste" />
+					</Column>
+					<Column>
+						<Label text="Etapa" />
+					</Column>
+					<Column>
+						<Label text="Empresa" />
+					</Column>
+					<Column>
+						<Label text="Responsável" />
+					</Column>
+				</columns>
+
+			</Table>
+
+		</content>
+	</Page>
+</core:View>

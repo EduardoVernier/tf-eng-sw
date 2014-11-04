@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Campo de Provas Randon</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+			rel='stylesheet' type='text/css'>
+		
+		<script src="resources/sap-ui-core.js" id="sap-ui-bootstrap"
+			data-sap-ui-libs="sap.m,sap.ui.layout,sap.suite.ui.commons"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{
+						"com.sap.randon": "./"
+					}'>
+			
+		</script>		
+		<script>
+			new sap.ui.core.ComponentContainer({
+				name : "com.sap.randon"
+			}).placeAt("content");
+		</script>
+		<link rel="stylesheet" type="text/css" href="./style/tiles.css" />
+		<link rel="stylesheet" type="text/css" href="./style/login.css" />
+		<link rel="stylesheet" type="text/css" href="./style/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="./style/newSolicitation.css" />
+		<link rel="stylesheet" type="text/css" href="./style/pendingTests.css" />
+		<link rel="stylesheet" type="text/css" href="./style/resourceManagement.css" />
+		<link rel="stylesheet" type="text/css" href="./style/hoursControl.css" />
+		<!-- only load the mobile lib "sap.m" and the "sap_mvi" theme -->
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>

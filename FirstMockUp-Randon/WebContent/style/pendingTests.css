@@ -1,0 +1,34 @@
+.sapMObjLTitle,.sapMObjLNumber {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.sapUiPanelHdrItem.sapUiPanelTitle.sapUiTvH5 {
+	font-size: 18px;
+	font-weight: 200;
+	padding-left: 10px;
+	line-height: 30px;	
+}
+
+.sapUiPanel .sapUiFormResGrid>div {
+	background-color : rgba(0,0,0,0.0);
+}
+
+.sapUiPanelHdrEmph {
+	background-color : rgba(0,0,0,0.0);
+}
+
+.sapMTB-Transparent-CTX.sapMTB,.sapMTB-Transparent-CTX>.sapMTB {
+	padding-left : 0rem;
+}
+
+.sapMBar-CTX.sapMPageHeader .sapMLabel {
+	font-family : 'Open Sans', sans-serif;
+}
+
+/* 
+	makes attachmentList in the pending tests tile transparent, 
+	if other lists become transparent, think of a clever way of doing it. 
+ */
+.sapMListBGSolid .sapMLIB {
+	background-color: rgba(0,0,0,0);
+}

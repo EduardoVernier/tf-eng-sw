@@ -1,0 +1,18 @@
+#Login--user-inner, #Login--password-inner {
+	height: 3rem;	
+}
+
+.logonButton {
+	background-color: #008fd3;
+	color: white;
+	margin : 1rem 0rem;
+}
+
+.loginInput {
+	margin-top: 1rem;
+}
+
+#__button0.sapMBtnHover {
+	background-color: #0076cb;
+	color: white;
+}

@@ -1,0 +1,37 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:commons="sap.ui.commons" xmlns:f="sap.ui.layout.form" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" controllerName="com.sap.randon.view.adm.RunningTestsDetailView"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="admRunningTestsDetailPage" title="{i18n>RunningTestsDetailTitle}" showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<ObjectHeader title="{companyName}" number="{id}"
+				titleActive="true">
+				<statuses>
+					<ObjectStatus text="{status}" />
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Criada em {creationDate}" />
+				</attributes>
+			</ObjectHeader>
+
+			<commons:Panel areaDesign="Transparent" text="Progresso">
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<ProgressIndicator />
+					</l:content>
+				</l:Grid>
+			</commons:Panel>
+
+			<commons:Panel areaDesign="Transparent" text="Anexos">
+
+			</commons:Panel>
+
+			<commons:Panel areaDesign="Transparent" text="Controle de Horas">
+			    
+			</commons:Panel>
+
+		</content>
+		
+	</Page>
+</core:View>

@@ -1,0 +1,379 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:commons="sap.ui.commons" controllerName="com.sap.randon.view.customer.NewRequestView"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ca="sap.ca.ui"
+	xmlns:me="sap.me">
+	<Page>
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://home" press="navigateHome" />
+				</contentLeft>
+				<contentMiddle>
+					<Text class="sap-font-open-sans" text="Nova Solicitação"
+						press="" />
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<IconTabBar select="handleSelectedIconChange" class="iconTabBarPaddingTop"
+				id="idIconTabBarMulti" expanded="true">
+				<items>
+
+					<!-- 1ª TAB -->
+					<IconTabFilter icon="sap-icon://activity-2" key="1">
+
+						<VBox height="3rem" />
+						<l:Grid width="auto" defaultSpan="L12 M12 S12">
+							<l:content>
+								<f:SimpleForm id="requestorDataForm" editable="true"
+									layout="ResponsiveGridLayout" title="Formulário de Identificação"
+									labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+									columnsL="2" columnsM="2" columnsS="1" class="editableForm">
+									<core:Title />
+									<Label text="Empresa/Cliente" />
+									<Input enabled="false" type="Text" id="clientName" value="{/UserTitle}" />
+									<Label text="Solicitante" />
+									<Input type="Text" id="requestor" />
+									<Label text="CPF" />
+									<Input type="Text" id="cpf" />
+
+
+									<core:Title />
+									<Label text="Telefone/Celular" />
+									<Input id="phone" />
+									<Label text="E-mail" />
+									<Input id="email" />
+									<core:Title />
+									<core:Title />
+									<Label />
+									<!-- <Button class="sapMBtnFloatRight" width="2rem" type="Transparent" 
+										icon="sap-icon://arrow-right" press="nextStep" id="next1"> <customData> <core:CustomData 
+										key="nextTabNumber" value="2" /> </customData> </Button> -->
+								</f:SimpleForm>
+							</l:content>
+						</l:Grid>
+					</IconTabFilter>
+
+					<IconTabSeparator icon="sap-icon://open-command-field" />
+
+					<!-- 2ª TAB -->
+
+					<IconTabFilter enabled="false" icon="sap-icon://calendar"
+						key="2">
+						<VBox height="3rem" />
+						<l:Grid width="auto" defaultSpan="L12 M12 S12">
+							<l:content>
+								<f:SimpleForm id="productDataForm" editable="true"
+									layout="ResponsiveGridLayout" title="Dados da Amostra"
+									labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+									columnsL="2" columnsM="2" columnsS="1" class="editableForm">
+									<core:Title />
+									<Label text="Produto a ser testado" />
+									<Input type="Text" id="product" />
+									<Label text="Quantidade" />
+									<Input type="Text" id="amount" />
+									<core:Title />
+									<Label text="Descrição do Produto" />
+									<TextArea value="" rows="3" id="description" />
+
+								</f:SimpleForm>
+							</l:content>
+						</l:Grid>
+
+						<l:Grid width="auto" defaultSpan="L12 M12 S12">
+							<l:content>
+								<f:SimpleForm id="testDataForm" editable="true"
+									layout="ResponsiveGridLayout" title="Dados do Teste"
+									labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+									columnsL="2" columnsM="2" columnsS="1" class="editableForm">
+									<core:Title />
+									<Label text="Tipo do Teste" />
+									<Button id="testTypeSelector" text="Selecione os testes..."
+										press="openTestsSelect" />
+
+
+									<Label text="Período" />
+									<FlexBox id="testDateBox" alignItems="Center"
+										direction="Row" justifyContent="SpaceBetween">
+										<ca:DatePicker id="startDate" class="datePicker"
+											locale="pt_BR" />
+										<Text class="sapMLabel" text="a" />
+										<ca:DatePicker id="endDate" class="datePicker"
+											locale="pt_BR" />
+									</FlexBox>
+									<core:Title />
+									<Label text="Relatório" />
+
+									<Select id="reportType">
+										<items>
+											<core:ListItem id="reportType-default" key="standardReport"
+												text="Padrão Campo de Provas" />
+											<core:ListItem key="customReport" text="Conforme Anexo" />
+										</items>
+									</Select>
+									<core:Title />
+
+								</f:SimpleForm>
+
+							</l:content>
+						</l:Grid>
+
+
+
+
+
+					</IconTabFilter>
+
+					<IconTabSeparator icon="sap-icon://open-command-field" />
+					<!-- 3ª TAB -->
+					<IconTabFilter enabled="false" icon="sap-icon://lead"
+						key="3">
+						<VBox height="3rem" />
+						<l:Grid width="auto" defaultSpan="L12 M12 S12">
+							<l:content>
+								<f:SimpleForm id="billingDataForm" editable="true"
+									layout="ResponsiveGridLayout" title="Dados para Faturamento"
+									labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+									columnsL="2" columnsM="2" columnsS="1" class="editableForm">
+									<core:Title />
+									<Label text="Faturar para" />
+									<Input type="Text" id="billTo" />
+									<Label text="Código do Cliente" />
+									<Input type="Text" id="clientCode" />
+									<Label text="CNPJ/CPF" />
+									<Input type="Text" id="cnpjOrCpf" />
+
+									<core:Title />
+									<Label text="Endereço para NF" />
+									<Input type="Text" id="addressForReceipt" />
+									<Label text="Cidade" />
+									<Input type="Text" id="billingCity" />
+									<Label text="CEP" />
+									<Input type="Text" id="billingCep" />
+								</f:SimpleForm>
+
+							</l:content>
+						</l:Grid>
+					</IconTabFilter>
+
+					<IconTabSeparator icon="sap-icon://open-command-field" />
+
+					<!-- 4ª TAB -->
+
+					<IconTabFilter enabled="false" icon="sap-icon://attachment"
+						key="4">
+						<commons:Panel areaDesign="Transparent" text="Adicionar anexos...">
+						    <ca:FileUpload uploadEnabled="true" > 
+						    	<ca:uploadProgressLabel>
+						    	    <Label text="" />
+						    	</ca:uploadProgressLabel>    
+					        </ca:FileUpload>
+						        <!-- uploadUrl="?" /\ --> 
+						</commons:Panel>
+					</IconTabFilter>
+
+					<IconTabSeparator icon="sap-icon://open-command-field" />
+
+					<!-- 5ª TAB -->
+
+					<IconTabFilter enabled="false" icon="sap-icon://expense-report"
+						key="5">
+						<commons:Panel areaDesign="Transparent" text="Dados do Solicitante">
+							<l:Grid defaultSpan="L12 M12 S12" width="auto">
+								<l:content>
+									<f:Form id="checkoutSolicitorForm" minWidth="1024"
+										maxContainerCols="2" editable="true">
+
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanL="3"
+												labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+												columnsM="1" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Empresa/Cliente">
+														<f:fields>
+															<Text text="-" id="checkoutClientName" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Solicitante">
+														<f:fields>
+															<Text text="-" id="checkoutRequestor" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="CPF">
+														<f:fields>
+															<Text text="-" id="checkoutCpf" />
+														</f:fields>
+													</f:FormElement>
+
+													<f:FormElement label="Telefone">
+														<f:fields>
+															<Text text="-" id="checkoutPhone" />
+														</f:fields>
+													</f:FormElement>
+
+													<f:FormElement label="E-mail">
+														<f:fields>
+															<Text text="-" id="checkoutEmail" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</l:content>
+							</l:Grid>
+						</commons:Panel>
+
+						<commons:Panel areaDesign="Transparent" text="Dados da Amostra">
+							<l:Grid defaultSpan="L12 M12 S12" width="auto">
+								<l:content>
+									<f:Form id="checkoutSampleForm" minWidth="1024"
+										maxContainerCols="2" editable="true">
+
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanL="3"
+												labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+												columnsM="1" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Produto">
+														<f:fields>
+															<Text text="-" id="checkoutProduct" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Quantidade">
+														<f:fields>
+															<Text text="-" id="checkoutAmount" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Descrição">
+														<f:fields>
+															<Text text="-" id="checkoutDescription" />
+														</f:fields>
+													</f:FormElement>
+
+
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</l:content>
+							</l:Grid>
+						</commons:Panel>
+						<commons:Panel areaDesign="Transparent" text="Dados do Teste">
+							<l:Grid defaultSpan="L12 M12 S12" width="auto">
+								<l:content>
+									<f:Form id="checkoutTestDataForm" minWidth="1024"
+										maxContainerCols="2" editable="true">
+
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanL="3"
+												labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+												columnsM="1" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+												    <f:FormElement label="Tipo do Teste">
+												        <f:fields>
+												            <Text id="checkoutTestType" />
+												        </f:fields>
+												    </f:FormElement>
+													<f:FormElement label="Data de Início">
+														<f:fields>
+															<Text text="-" id="checkoutStartDate" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Data de Fim">
+														<f:fields>
+															<Text text="-" id="checkoutEndDate" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Relatório">
+														<f:fields>
+															<Text id="checkoutReportType" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</l:content>
+							</l:Grid>
+						</commons:Panel>
+						<commons:Panel areaDesign="Transparent" text="Dados para Faturamento">
+							<l:Grid defaultSpan="L12 M12 S12" width="auto">
+								<l:content>
+									<f:Form id="checkoutPaymentForm" minWidth="1024"
+										maxContainerCols="2" editable="true">
+
+										<f:layout>
+											<f:ResponsiveGridLayout labelSpanL="3"
+												labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+												columnsM="1" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement label="Faturar para">
+														<f:fields>
+															<Text text="-" id="checkoutBillTo" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Código do Cliente">
+														<f:fields>
+															<Text text="-" id="checkoutClientCode" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="CPF/CNPJ">
+														<f:fields>
+															<Text text="-" id="checkoutCnpjOrCpf" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Endereço para NF">
+														<f:fields>
+															<Text text="-" id="checkoutAddressForReceipt" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Cidade">
+														<f:fields>
+															<Text text="-" id="checkoutBillingCity" />
+														</f:fields>
+													</f:FormElement>
+													<f:FormElement label="Cep">
+														<f:fields>
+															<Text text="-" id="checkoutBillingCep" />
+														</f:fields>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+								</l:content>
+							</l:Grid>
+						</commons:Panel>
+						<commons:Panel areaDesign="Transparent" text="Anexos" />
+
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button press="submitRequest" id="sendRequestButton" icon="sap-icon://accept"
+						text="Enviar" enabled="false" type="Accept" />
+					<Button id="cancelRequestButton" text="Cancelar" type="Reject"
+						press="cancelRequest" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

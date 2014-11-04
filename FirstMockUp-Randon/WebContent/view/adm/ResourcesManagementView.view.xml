@@ -1,0 +1,183 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="com.sap.randon.view.adm.ResourcesManagementView"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Gerenciamento de Recursos" showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+		<content>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<f:SimpleForm editable="true" layout="ResponsiveGridLayout"
+						labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0"
+						columnsL="4" columnsM="2" columnsS="1" class="editableForm">
+						<core:Title text="Campo de Provas" />
+						<Label text="Tipo de teste" />
+						<HBox fitContainer="true">
+							<Select height="3rem" >
+
+								<items>
+									<core:ListItem text="Teste de Frenagem" />
+								</items>
+							</Select>
+							<HBox width="12rem" />
+							<Button type="Transparent" text="Cadastrar novo teste" />
+							<HBox width="1rem" />
+							<Button type="Transparent" text="Cadastrar novo recurso" />
+						</HBox>
+					</f:SimpleForm>
+
+					<IconTabBar>
+						<items>
+							<IconTabFilter icon="sap-icon://flag">
+
+								<Table items="{/tracks}" id="tracksTable" headerText="Pistas">
+									<columns>
+										<Column>
+											<header>
+												<Label text="Tipos de Pista" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Código" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Status Atual" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Calendário" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Remover pista" />
+											</header>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{name}" />
+												<Text text="{id}" />
+												<Text
+													text="{
+									                path : 'isAvailable',
+									                formatter : 'com.sap.randon.util.Formatter.isAvailableFormatter'
+									                }" />
+												<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+												<Button width="2rem" type="Transparent" icon="sap-icon://decline" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Button width="100%" id="addTrack" press="handleAddTrack"
+									text="Adicionar pista" icon="sap-icon://add" />
+
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://person-placeholder">
+								<Table items="{/people}" headerText="Pessoas">
+									<columns>
+										<Column>
+											<header>
+												<Label text="Pessoas" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Código" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Status Atual" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Calendário" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Remover Pessoa" />
+											</header>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{name}" />
+												<Text text="{id}" />
+												<Text
+													text="{
+									                path : 'isAvailable',
+									                formatter : 'com.sap.randon.util.Formatter.isAvailableFormatter'
+									                }" />
+												<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+												<Button width="2rem" type="Transparent" icon="sap-icon://decline" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Button width="100%" id="addHuman" press="handleAddHuman"
+									text="Adicionar pessoa" icon="sap-icon://add" />
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://wrench">
+								<Table items="{/equipments}" headerText="Equipamentos">
+									<columns>
+										<Column>
+											<header>
+												<Label text="Equipamentos" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Código" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Status Atual" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Calendário" />
+											</header>
+										</Column>
+										<Column>
+											<header>
+												<Label text="Remover Equipamento" />
+											</header>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{name}" />
+												<Text text="{id}" />
+												<Text
+													text="{
+									                path : 'isAvailable',
+									                formatter : 'com.sap.randon.util.Formatter.isAvailableFormatter'
+									                }" />
+												<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+												<Button width="2rem" type="Transparent" icon="sap-icon://decline" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Button width="100%" id="addEquipment" press="handleAddEquipment"
+									text="Adicionar recurso" icon="sap-icon://add" />
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

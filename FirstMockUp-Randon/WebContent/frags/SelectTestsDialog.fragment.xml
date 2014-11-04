@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns="sap.m" id="mainPopover"
+	xmlns:core="sap.ui.core">
+
+	<TableSelectDialog noDataText="No Products Found"
+		title="Selecione o Teste" search="handleSearch" confirm="onTestTypeSelected"
+		close="handleClose" multiSelect="false">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Frenagem" text="Resistência" />
+				<Text text="Teste na pista de asfalto 8, 9 e 10" />
+				<Text text="2 dias" />
+				<Text text="R$25.000,00" />
+			</cells>
+		</ColumnListItem>
+		
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Amortecedores" text="Resistência" />
+				<Text text="Teste na pista de obstáculos 13 e pista de chão batido 21 " />
+				<Text text="5 dias" />
+				<Text text="R$52.000,00" />
+			</cells>
+		</ColumnListItem>
+		
+		
+		<columns>
+			<Column width="12em">
+				<header>
+					<Label text="Nome do Teste" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet">
+				<header>
+					<Label text="Descrição" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right">
+				<header>
+					<Label text="Duração Estimada" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right">
+				<header>
+					<Label text="Preço" />
+				</header>
+			</Column>
+			
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

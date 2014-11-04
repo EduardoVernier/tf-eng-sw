@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" id="addHuman"
+	xmlns:core="sap.ui.core">
+
+	<TableSelectDialog noDataText="No Products Found"
+		title="Selecione o operador" confirm="onAddHumanConfirm"
+		multiSelect="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Beto Batista Batistuta" />
+				<Text text="i219879" />
+				<Text text="Disponível" />
+				<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+			</cells>
+		</ColumnListItem>
+
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Marcelo Macedo Moreno" />
+				<Text text="i212992" />
+				<Text text="Disponível" />
+				<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+			</cells>
+		</ColumnListItem>
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Pedro Pedra Pedroso" />
+				<Text text="i212900" />
+				<Text text="Ocupado" />
+				<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+			</cells>
+		</ColumnListItem>
+
+		<columns>
+			<Column >
+				<header>
+					<Label text="Nome do Operador" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right" >
+				<header>
+					<Label text="Id do Operador" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right">
+				<header>
+					<Label text="Turno" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right">
+				<header>
+					<Label text="Cronograma" />
+				</header>
+			</Column>
+
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,12 @@
+.sapMBtn.sapMBtnActive.sapMBtnHover.sap-options-button {
+	background-color : #0076cb;
+}
+
+.sapMBtnFloatRight {
+	float : right;
+}
+
+.newSolicitationNextButton {
+	float : right;
+	margin-top : 4rem;
+}

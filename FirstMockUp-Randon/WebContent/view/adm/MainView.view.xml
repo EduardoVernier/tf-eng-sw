@@ -1,0 +1,77 @@
+<core:View controllerName="com.sap.randon.view.adm.MainView"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:commons="sap.suite.ui.commons"
+	xmlns:layout="sap.ui.layout">
+	<Page title="{i18n>TestTitle}" id="mainPage" enableScrolling="false">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Text class="sap-font-open-sans" text="Portal do Campo de Provas Randon" />
+				</contentLeft>
+				<contentMiddle>
+					<Text class="sap-font-open-sans" text="Adm" />
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://action-settings" press="handleOptionsPress"
+						id="optionsButton" class="sap-options-button" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+
+			<TileContainer id="container">
+
+				<StandardTile id="userTile" class="sap-tile-border-radius"
+					icon="sap-icon://customer" title="Campo de Provas Randon" removable="false" />
+
+				<StandardTile id="pendingTestsTile" class="sap-tile-border-radius"
+					icon="sap-icon://request" title="{i18n>PendingTestsTitle}" 
+					number="{
+								path : '/pendingTests',
+								formatter : 'com.sap.randon.util.Formatter.getLength'
+							}"
+					numberUnit="{i18n>PendingUnit}"
+					removable="false" 
+					press="pendingTestsPress"/>
+				<StandardTile id="runningTestsTile" class="sap-tile-border-radius"
+				    icon="sap-icon://goalseek" title="{i18n>RunningTestsTitle}"
+				    removable="false" 
+				    press="runningTestsPress"/>
+				
+				<StandardTile id="finishedTestsTile" class="sap-tile-border-radius"
+				    icon="sap-icon://goal" title="{i18n>FinishedTestsTitle}"
+				    number="{/FinishedTestsNumber}" numberUnit="{i18n>TestsUnit}"
+				    removable="false" />
+				
+				
+				<StandardTile id="resourcesManagementTile" class="sap-tile-border-radius"
+					icon="sap-icon://person-placeholder" title="{i18n>ResourcesManagementTitle}"
+					removable="false" 
+					press="resourcesManagementPress"/>
+
+				<StandardTile id="testsScheduleTile" class="sap-tile-border-radius"
+					icon="sap-icon://gantt-bars" title="{i18n>TestsScheduleTitle}"
+					number="{/TestsScheduleNumber}" numberUnit="{i18n>TestsUnit}"
+					removable="false" />
+
+				<StandardTile id="hoursControlTile" class="sap-tile-border-radius"
+					icon="sap-icon://history" title="{i18n>HoursControlTitle}"
+					number="{/PendingReportsNumber}" numberUnit="{i18n>ReportsUnit}"
+					removable="false" press="hoursControlPress" />
+
+				<StandardTile id="billingTile" class="sap-tile-border-radius"
+					icon="sap-icon://lead" title="{i18n>BillingTitle}" number="{/BillingPending}"
+					numberUnit="{i18n>PendingUnit}" removable="false" />
+
+				<StandardTile id="historyTile" class="sap-tile-border-radius"
+					icon="sap-icon://past" title="{i18n>HistoryTitle}" removable="false" />
+
+				<StandardTile id="statisticsTile" class="sap-tile-border-radius"
+					icon="sap-icon://line-chart" title="{i18n>StatisticsTitle}" number="{/StatisticsNumber}"
+					numberUnit="{i18n>TestsUnit}" removable="false" />
+				
+
+			</TileContainer>
+		</content>
+
+	</Page>
+</core:View>

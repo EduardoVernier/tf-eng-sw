@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" id="addEquipment"
+	xmlns:core="sap.ui.core">
+
+	<TableSelectDialog noDataText="No Products Found"
+		title="Selecione o equipamento" confirm="onAddEquipmentConfirm"
+		multiSelect="true">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Sensor de Estresse no Freio" />
+				<Text text="S219879" />
+				<Text text="Disponível" />
+				<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+			</cells>
+		</ColumnListItem>
+
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Sensor de Temperatura 1" />
+				<Text text="S212992" />
+				<Text text="Ocupado" />
+				<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+			</cells>
+		</ColumnListItem>
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="Sensor de Temperatura 2" />
+				<Text text="S212900" />
+				<Text text="Disponível" />
+				<Button width="1rem" type="Transparent" icon="sap-icon://calendar" />
+			</cells>
+		</ColumnListItem>
+
+		<columns>
+			<Column >
+				<header>
+					<Label text="Nome da Pista" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right" >
+				<header>
+					<Label text="Id da Pista"  />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right">
+				<header>
+					<Label text="Status da Pista" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" hAlign="Right">
+				<header>
+					<Label text="Disponibilidade" />
+				</header>
+			</Column>
+
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

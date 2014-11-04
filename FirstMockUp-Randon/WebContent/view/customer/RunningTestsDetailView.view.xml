@@ -1,0 +1,214 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:commons="sap.ui.commons" xmlns:f="sap.ui.layout.form" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" controllerName="com.sap.randon.view.customer.RunningTestsDetailView"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>RunningTestsDetailTitle}" showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavButtonPress">
+		<content>
+
+
+			<ObjectHeader title="{companyName}" number="{id}"
+				titleActive="true">
+				<statuses>
+					<ObjectStatus text="{status}" />
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Criada em {creationDate}" />
+				</attributes>
+			</ObjectHeader>
+
+			<commons:Panel areaDesign="Transparent" text="Dados do Solicitante">
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<f:Form id="solicitorForm" minWidth="1024"
+							maxContainerCols="2" editable="true">
+
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanL="3"
+									labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+									columnsM="1" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Solicitante">
+											<f:fields>
+												<Text text="{requestorData/name}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="CPF">
+											<f:fields>
+												<Text text="{requestorData/cpf}" />
+											</f:fields>
+										</f:FormElement>
+
+										<f:FormElement label="Telefone">
+											<f:fields>
+												<Text text="{requestorData/telephone}" />
+											</f:fields>
+										</f:FormElement>
+
+										<f:FormElement label="E-mail">
+											<f:fields>
+												<Text text="{requestorData/email}" />
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</l:content>
+				</l:Grid>
+			</commons:Panel>
+
+
+
+			<commons:Panel areaDesign="Transparent" text="Dados da Amostra">
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<f:Form id="sampleForm" minWidth="1024" maxContainerCols="2"
+							editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanL="3"
+									labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+									columnsM="1" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Produto/Componente">
+											<f:fields>
+												<Text text="{sampleData/product}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Quantidade">
+											<f:fields>
+												<Text text="{sampleData/amount}" />
+											</f:fields>
+										</f:FormElement>
+
+										<f:FormElement label="Descrição">
+											<f:fields>
+												<Text text="{sampleData/description}" />
+											</f:fields>
+										</f:FormElement>
+
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</l:content>
+				</l:Grid>
+			</commons:Panel>
+
+			<commons:Panel areaDesign="Transparent" text="Dados do Teste">
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<f:Form id="testForm" minWidth="1024" maxContainerCols="2"
+							editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanL="3"
+									labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+									columnsM="1" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Tipo do teste">
+											<f:fields>
+												<Text text="{testData/type}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Data de início">
+											<f:fields>
+												<Text text="{testData/startDate}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Data de fim">
+											<f:fields>
+												<Text text="{testData/endDate}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Relatório">
+											<f:fields>
+												<Text text="{testData/reportType}" />
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</l:content>
+				</l:Grid>
+			</commons:Panel>
+
+
+
+			<commons:Panel areaDesign="Transparent" text="Dados do Faturamento">
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<f:Form id="billingForm" minWidth="1024" maxContainerCols="2"
+							editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanL="3"
+									labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1"
+									columnsM="1" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Faturar para">
+											<f:fields>
+												<Text text="{billingData/billTo}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Código do Cliente">
+											<f:fields>
+												<Text text="{billingData/clientCode}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="CNPJ/CPF">
+											<f:fields>
+												<Text text="{billingData/cnpjOrCpf}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Endereço para NF">
+											<f:fields>
+												<Text text="{billingData/addressForReceipt}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Cidade">
+											<f:fields>
+												<Text text="{billingData/billCity}" />
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="CEP">
+											<f:fields>
+												<Text text="{billingData/billCep}" />
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</l:content>
+				</l:Grid>
+			</commons:Panel>
+
+			<commons:Panel areaDesign="Transparent" text="Progresso">
+				<l:Grid defaultSpan="L12 M12 S12" width="auto">
+					<l:content>
+						<ProgressIndicator />
+					</l:content>
+				</l:Grid>
+			</commons:Panel>
+			<commons:Panel areaDesign="Transparent" text="Anexos">
+
+			</commons:Panel>
+
+
+
+
+		</content>
+	</Page>
+</core:View>
