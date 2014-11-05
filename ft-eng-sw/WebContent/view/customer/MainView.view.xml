@@ -26,7 +26,7 @@
 					removable="false" press="customerInfo"/>
 
 				<StandardTile id="newTestRequestTile" class="sap-tile-border-radius"
-					icon="sap-icon://add" title="{i18n>NewTestRequestTitle}" 
+					icon="sap-icon://add" title="Adicionar item no catálogo" 
 					removable="false" press="newTestRequest"/> 
 					
 					

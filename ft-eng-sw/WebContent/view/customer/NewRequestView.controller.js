@@ -164,18 +164,18 @@ sap.ui.controller("com.sap.randon.view.customer.NewRequestView", {
 		var isPhone = jQuery.device.is.phone;
 		var view = this.getView();
 		var testDateBox = view.byId("testDateBox");
-		if (isPhone) {
-			testDateBox.setDirection(sap.m.FlexDirection.Column);
-			testDateBox.setAlignItems(sap.m.FlexAlignItems.Stretch);
-		} else {
-			testDateBox.setDirection(sap.m.FlexDirection.Row);
-			testDateBox.setAlignItems(sap.m.FlexAlignItems.Center);
-		}
+//		if (isPhone) {
+//			testDateBox.setDirection(sap.m.FlexDirection.Column);
+//			testDateBox.setAlignItems(sap.m.FlexAlignItems.Stretch);
+//		} else {
+//			testDateBox.setDirection(sap.m.FlexDirection.Row);
+//			testDateBox.setAlignItems(sap.m.FlexAlignItems.Center);
+//		}
 		var model = new sap.ui.model.json.JSONModel();
 		model.setData(RequestedTestsMockData);
 		this.getView().setModel(model);
 		// TODO Guardar os inputs em this.inputs pra poder limpar todos de uma vez!
-		this.getView().byId("reportType").setSelectedItemId("reportType-default");
+		//this.getView().byId("reportType").setSelectedItemId("reportType-default");
 		
 		this.inputs = [
             view.byId("clientName"),
